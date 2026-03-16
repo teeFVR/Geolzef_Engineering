@@ -2,50 +2,58 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 <title>Geolzef Engineering | Engineering Excellence Built to Last</title>
+
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
-<script id="tailwind-config">
+<script>
 tailwind.config = {
 darkMode: "class",
 theme: {
 extend: {
 colors: {
-"primary": "#d41111",
+primary: "#d41111",
 "background-light": "#f8f6f6",
 "background-dark": "#221010",
 },
 fontFamily: {
-"display": ["Space Grotesk", "sans-serif"]
+display: ["Space Grotesk","sans-serif"]
 },
-borderRadius: {
-"DEFAULT": "0.125rem",
-"lg": "0.25rem",
-"xl": "0.5rem",
-"full": "0.75rem"
-},
-},
-},
+borderRadius:{
+DEFAULT:"0.125rem",
+lg:"0.25rem",
+xl:"0.5rem",
+full:"0.75rem"
+}
+}
+}
 }
 </script>
 
 <style>
-.hexagon-mask {
-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+body{
+font-family:'Space Grotesk',sans-serif;
 }
-body {
-font-family: 'Space Grotesk', sans-serif;
+
+.hexagon-mask{
+clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);
 }
-#mobile-menu {
-transition: transform 0.3s ease-in-out;
+
+#mobile-menu{
+transition:transform .3s ease;
+transform:translateX(100%);
 }
-.menu-open #mobile-menu {
-transform: translateX(0);
+
+.menu-open #mobile-menu{
+transform:translateX(0);
 }
 </style>
+
 </head>
 
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
@@ -100,6 +108,30 @@ transform: translateX(0);
         </div>
     </div>
 </header>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed inset-0 z-40 hidden bg-black/50 backdrop-blur-sm md:hidden">
+    
+    <div class="absolute right-0 top-0 h-full w-64 bg-white dark:bg-background-dark shadow-lg p-6 flex flex-col gap-6">
+
+        <button id="close-menu" class="self-end text-slate-900 dark:text-slate-100">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+
+        <nav class="flex flex-col gap-6 mt-6">
+            <a class="text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors" href="index.html">Home</a>
+            <a class="text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors" href="about.html">About Us</a>
+            <a class="text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors" href="products.html">Products</a>
+            <a class="text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors" href="portfolio.html">Projects</a>
+            <a class="text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors" href="contact.html">Contact</a>
+        </nav>
+
+        <a href="contact.html" class="mt-4 bg-primary text-white text-center py-3 rounded font-bold uppercase tracking-widest">
+            Request Quote
+        </a>
+
+    </div>
+
+</div>
 
 <section class="relative w-full min-h-[85vh] flex items-center overflow-hidden">
 <div class="absolute inset-0 z-0">
