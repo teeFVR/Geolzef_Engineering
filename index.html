@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Geolzef Engineering | Engineering Excellence Built to Last</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<script id="tailwind-config">
+tailwind.config = {
+darkMode: "class",
+theme: {
+extend: {
+colors: {
+"primary": "#d41111",
+"background-light": "#f8f6f6",
+"background-dark": "#221010",
+},
+fontFamily: {
+"display": ["Space Grotesk", "sans-serif"]
+},
+borderRadius: {
+"DEFAULT": "0.125rem",
+"lg": "0.25rem",
+"xl": "0.5rem",
+"full": "0.75rem"
+},
+},
+},
+}
+</script>
+
+<style>
+.hexagon-mask {
+clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+body {
+font-family: 'Space Grotesk', sans-serif;
+}
+#mobile-menu {
+transition: transform 0.3s ease-in-out;
+}
+.menu-open #mobile-menu {
+transform: translateX(0);
+}
+</style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+
+<div id="mobile-menu" class="fixed inset-0 z-[60] bg-background-dark translate-x-full md:hidden">
+    <div class="flex justify-end p-6">
+        <button id="close-menu" class="text-white">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+    </div>
+    <nav class="flex flex-col items-center gap-8 pt-10">
+        <a class="text-2xl font-bold uppercase text-white hover:text-primary" href="index.html">Home</a>
+        <a class="text-2xl font-bold uppercase text-white hover:text-primary" href="about.html">About Us</a>
+        <a class="text-2xl font-bold uppercase text-white hover:text-primary" href="products.html">Products</a>
+        <a class="text-2xl font-bold uppercase text-white hover:text-primary" href="portfolio.html">Projects</a>
+        <a class="text-2xl font-bold uppercase text-white hover:text-primary" href="contact.html">Contact</a>
+    </nav>
+</div>
+
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-primary/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+
+            <div class="flex items-center gap-3">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Geolzef Engineering Logo" class="h-12 w-auto">
+                </a>
+                <div>
+                    <h1 class="text-xl font-extrabold tracking-tighter uppercase leading-none">Geolzef</h1>
+                    <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-primary">Engineering Ltd</p>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors" href="index.html">Home</a>
+                <a class="text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors" href="about.html">About Us</a>
+                <a class="text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors" href="products.html">Products</a>
+                <a class="text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors" href="portfolio.html">Projects</a>
+                <a class="text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors" href="contact.html">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="contact.html" class="hidden lg:flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded font-bold text-sm uppercase tracking-widest transition-all">
+                    Request Quote
+                </a>
+                <button id="open-menu" class="md:hidden text-slate-900 dark:text-slate-100">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<section class="relative w-full min-h-[85vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-background-dark/90 via-background-dark/60 to-transparent z-10"></div>
+<img alt="Industrial Site" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2RrS2d4-vzPSzHS39Azk52inUxE8aalwjhuZ1_Zv3OXYFaTs_RhQRIXqIy9TbQaZfMy8UiN3jF3xIJ940sdBaK8F62Vr_CCJKFt5l0ggNtnAh-HEc7gL0XJcbyLm8ubrDTdhiJQ0vXTepgQzffmeF-VaEyds-tWsRQh1d8EaHj-iVXx3rMCjkl6V716gt3vv4fYlCzOsoVxeC7qT_VZIa3eLILz5lvzrWSvgSixBZ2jqDu7kul4a_5SFFyLGzYW76RJWxbv7__ndn"/>
+</div>
+
+<div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+<div class="max-w-3xl">
+<h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 uppercase">
+Engineering <br/><span class="text-primary">Excellence</span> <br/>Built to Last
+</h1>
+<p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl font-light">
+Delivering world-class industrial solutions across the SADC region. From complex infrastructure to structural precision, we build the future of industry.
+</p>
+<div class="flex flex-wrap gap-4">
+<a href="portfolio.html" class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded font-bold uppercase tracking-widest transition-all text-base flex items-center gap-2">
+View Our Projects <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<a href="products.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded font-bold uppercase tracking-widest transition-all text-base">
+Our Services
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="bg-slate-100 dark:bg-background-dark border-y border-primary/10">
+<div class="max-w-7xl mx-auto px-4 py-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center md:text-left border-r border-primary/10 last:border-r-0 hover:scale-105 transition-transform duration-300">
+<p class="text-primary text-4xl font-black mb-1">15</p>
+<p class="text-xs font-bold uppercase tracking-widest text-slate-500">Years Experience</p>
+</div>
+<div class="text-center md:text-left border-r border-primary/10 last:border-r-0 hover:scale-105 transition-transform duration-300">
+<p class="text-primary text-4xl font-black mb-1">8</p>
+<p class="text-xs font-bold uppercase tracking-widest text-slate-500">SADC Countries</p>
+</div>
+<div class="text-center md:text-left border-r border-primary/10 last:border-r-0 hover:scale-105 transition-transform duration-300">
+<p class="text-primary text-4xl font-black mb-1">120+</p>
+<p class="text-xs font-bold uppercase tracking-widest text-slate-500">Expert Staff</p>
+</div>
+<div class="text-center md:text-left border-r border-primary/10 last:border-r-0 hover:scale-105 transition-transform duration-300">
+<p class="text-primary text-4xl font-black mb-1">100%</p>
+<p class="text-xs font-bold uppercase tracking-widest text-slate-500">Safety Record</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-24 bg-background-light dark:bg-background-dark">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="mb-16">
+<h2 class="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">What We Do</h2>
+<h3 class="text-4xl font-black uppercase">Core Engineering Services</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+<div class="group bg-slate-50 dark:bg-background-dark/50 border border-slate-200 dark:border-primary/10 p-8 hover:bg-primary transition-all duration-300">
+<span class="material-symbols-outlined text-primary group-hover:text-white text-4xl mb-6">architecture</span>
+<h4 class="font-bold uppercase tracking-tighter mb-4 group-hover:text-white">Mechanical Engineering</h4>
+<p class="text-sm text-slate-500 group-hover:text-slate-200 leading-relaxed">
+Precision machinery installation and specialized industrial systems.
+</p>
+</div>
+<div class="group bg-slate-50 dark:bg-background-dark/50 border border-slate-200 dark:border-primary/10 p-8 hover:bg-primary transition-all duration-300">
+<span class="material-symbols-outlined text-primary group-hover:text-white text-4xl mb-6">foundation</span>
+<h4 class="font-bold uppercase tracking-tighter mb-4 group-hover:text-white">Civil Construction</h4>
+<p class="text-sm text-slate-500 group-hover:text-slate-200 leading-relaxed">
+Large scale earthworks and heavy infrastructure foundations.
+</p>
+</div>
+<div class="group bg-slate-50 dark:bg-background-dark/50 border border-slate-200 dark:border-primary/10 p-8 hover:bg-primary transition-all duration-300">
+<span class="material-symbols-outlined text-primary group-hover:text-white text-4xl mb-6">engineering</span>
+<h4 class="font-bold uppercase tracking-tighter mb-4 group-hover:text-white">Structural Steel</h4>
+<p class="text-sm text-slate-500 group-hover:text-slate-200 leading-relaxed">
+Design, fabrication, and erection of high-grade steel structures.
+</p>
+</div>
+<div class="group bg-slate-50 dark:bg-background-dark/50 border border-slate-200 dark:border-primary/10 p-8 hover:bg-primary transition-all duration-300">
+<span class="material-symbols-outlined text-primary group-hover:text-white text-4xl mb-6">assignment</span>
+<h4 class="font-bold uppercase tracking-tighter mb-4 group-hover:text-white">Project Management</h4>
+<p class="text-sm text-slate-500 group-hover:text-slate-200 leading-relaxed">
+End-to-end oversight ensuring on-time and on-budget delivery.
+</p>
+</div>
+<div class="group bg-slate-50 dark:bg-background-dark/50 border border-slate-200 dark:border-primary/10 p-8 hover:bg-primary transition-all duration-300">
+<span class="material-symbols-outlined text-primary group-hover:text-white text-4xl mb-6">build</span>
+<h4 class="font-bold uppercase tracking-tighter mb-4 group-hover:text-white">Industrial Maintenance</h4>
+<p class="text-sm text-slate-500 group-hover:text-slate-200 leading-relaxed">
+Preventative maintenance and 24/7 emergency repair services.
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-24 bg-slate-100 dark:bg-background-dark/30 relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="grid grid-cols-2 gap-4">
+<div class="hexagon-mask w-full aspect-square bg-slate-300 overflow-hidden">
+<img alt="Industrial Work" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZeJl9TulzgAwlt1sbr1VLzfSr88QTi52TmHxWq24yVIMfE3223I9xhkwC3JGo9wjPfcggmeD9dZDBu4g0K2hStyxZ7RB5r4rdAIYa5iGtPS1jBnTjRASrQNhBZren4yPRDp55CTF86kDRinHVRKEZl2L46o-EOmWtBhsyLJZiTkSba7HfGqb-uU7kK73XUd8SemnQdKxHxMpsvUvbbpFCkQxzjnADkgi9_9yIoo06nxolz7rDPaTBaPmcFO2TUNQa0V2kl2Fvpu8P"/>
+</div>
+<div class="hexagon-mask w-full aspect-square bg-primary mt-12 overflow-hidden flex items-center justify-center p-8">
+<div class="text-center text-white">
+<p class="text-4xl font-black">15</p>
+<p class="text-xs font-bold uppercase tracking-widest">Years of Trust</p>
+</div>
+</div>
+<div class="hexagon-mask w-full aspect-square bg-slate-300 overflow-hidden -mt-12">
+<img alt="Technical Design" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaNozbLShG_RFzisXsELJMjbqXLf-aDoNpHtIOzSWcqnDcXxpaOYfWSyzohrCqXnRsOIAQl1eeJp5dNmuQRDQA4HQmPOd7mSVhkDa0KPOdeOySohMULKTXXM8zdTfb8gnf_Q9_QNAdIyCqmuGg_zJXvE9uRZckhxWtoDQWfOrN08DRs0nbINi64v1CJlGE8fpVRIpJ4PV8LkQ4Diqg0JwRy7r1d3RHJ1IF1SyaM8PpLJ-iu-EwANq7O0RtghkvgCDRSCILNZ1SEVFt"/>
+</div>
+<div class="hexagon-mask w-full aspect-square bg-slate-200 dark:bg-primary/20 overflow-hidden">
+<img alt="Factory" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFl3TiZ-sNhKSiIQmxVq6OKZtXjLIfRgxjO5enLhtbmPP2gUWN6Nnunz4FCvQ6lLQpxrMPFfLgumo1whOoKqtidklIXCfglVX-EMRg7JCTqWPM_jcjTvLKAmoSji9s16Zhw7At1thMpk1eUt2IK5AlT91ivWHPC3yVw3b1e8DmNclabt-9mdoneotGEjYlAZEk5SIJtrxUp_z2CpNLpXr4zOJ-TxGPUdEIrh5yTDUNmY_SgrRyO_gDJQG-EyNyQUvgz7Ixg5GIQeOB"/>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">Why Geolzef</h2>
+<h3 class="text-4xl font-black uppercase mb-8">The Gold Standard in <br/>SADC Engineering</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+With over a decade and a half of operational excellence, Geolzef Engineering Limited has established itself as a reliable partner for complex industrial projects. We combine technical innovation with rigid safety standards.
+</p>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<div class="bg-primary/10 p-2 rounded">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+</div>
+<div>
+<h5 class="font-bold uppercase text-sm">Uncompromising Safety</h5>
+<p class="text-sm text-slate-500">Zero-harm culture embedded in every stage of project delivery.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-primary/10 p-2 rounded">
+<span class="material-symbols-outlined text-primary">public</span>
+</div>
+<div>
+<h5 class="font-bold uppercase text-sm">Regional Footprint</h5>
+<p class="text-sm text-slate-500">Deep logistical and regulatory expertise across 8 SADC nations.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-primary/10 p-2 rounded">
+<span class="material-symbols-outlined text-primary">handshake</span>
+</div>
+<div>
+<h5 class="font-bold uppercase text-sm">Technical Partnership</h5>
+<p class="text-sm text-slate-500">We work as an extension of your team to solve complex engineering hurdles.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="portfolio" class="py-24 bg-background-light dark:bg-background-dark">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">Recent Work</h2>
+<h3 class="text-4xl font-black uppercase">Engineering Excellence in Action</h3>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group relative overflow-hidden">
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZeJl9TulzgAwlt1sbr1VLzfSr88QTi52TmHxWq24yVIMfE3223I9xhkwC3JGo9wjPfcggmeD9dZDBu4g0K2hStyxZ7RB5r4rdAIYa5iGtPS1jBnTjRASrQNhBZren4yPRDp55CTF86kDRinHVRKEZl2L46o-EOmWtBhsyLJZiTkSba7HfGqb-uU7kK73XUd8SemnQdKxHxMpsvUvbbpFCkQxzjnADkgi9_9yIoo06nxolz7rDPaTBaPmcFO2TUNQa0V2kl2Fvpu8P" class="w-full h-80 object-cover group-hover:scale-110 transition duration-500" alt="">
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+<p class="text-white font-bold uppercase">Mining Infrastructure</p>
+</div>
+</div>
+<div class="group relative overflow-hidden">
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaNozbLShG_RFzisXsELJMjbqXLf-aDoNpHtIOzSWcqnDcXxpaOYfWSyzohrCqXnRsOIAQl1eeJp5dNmuQRDQA4HQmPOd7mSVhkDa0KPOdeOySohMULKTXXM8zdTfb8gnf_Q9_QNAdIyCqmuGg_zJXvE9uRZckhxWtoDQWfOrN08DRs0nbINi64v1CJlGE8fpVRIpJ4PV8LkQ4Diqg0JwRy7r1d3RHJ1IF1SyaM8PpLJ-iu-EwANq7O0RtghkvgCDRSCILNZ1SEVFt" class="w-full h-80 object-cover group-hover:scale-110 transition duration-500" alt="">
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+<p class="text-white font-bold uppercase">Structural Fabrication</p>
+</div>
+</div>
+<div class="group relative overflow-hidden">
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFl3TiZ-sNhKSiIQmxVq6OKZtXjLIfRgxjO5enLhtbmPP2gUWN6Nnunz4FCvQ6lLQpxrMPFfLgumo1whOoKqtidklIXCfglVX-EMRg7JCTqWPM_jcjTvLKAmoSji9s16Zhw7At1thMpk1eUt2IK5AlT91ivWHPC3yVw3b1e8DmNclabt-9mdoneotGEjYlAZEk5SIJtrxUp_z2CpNLpXr4zOJ-TxGPUdEIrh5yTDUNmY_SgrRyO_gDJQG-EyNyQUvgz7Ixg5GIQeOB" class="w-full h-80 object-cover group-hover:scale-110 transition duration-500" alt="">
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+<p class="text-white font-bold uppercase">Mechanical Installations</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-24 bg-primary text-white text-center">
+<div class="max-w-4xl mx-auto px-4">
+<h2 class="text-4xl font-black uppercase mb-6">Regional Excellence Across SADC</h2>
+<p class="mb-8 text-lg opacity-90">
+Delivering complex engineering solutions across Southern Africa with unmatched expertise and safety compliance.
+</p>
+<a href="contact.html" class="bg-white text-primary px-8 py-3 font-bold uppercase hover:bg-slate-200 transition">
+Start Your Project
+</a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-slate-900 text-slate-400 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="bg-primary p-1.5 rounded-sm">
+                        <span class="material-symbols-outlined text-white text-xl">precision_manufacturing</span>
+                    </div>
+                    <h2 class="text-lg font-bold text-white tracking-tight uppercase">Geolzef</h2>
+                </div>
+                <p class="text-sm leading-relaxed mb-6">
+                    Engineering solutions across the SADC region with integrity, safety, and innovation.
+                </p>
+                <div class="flex gap-3">
+                    <a class="h-9 w-9 border border-slate-700 rounded flex items-center justify-center hover:bg-primary hover:border-primary transition-colors" href="#">
+                        <span class="material-symbols-outlined text-sm">share</span>
+                    </a>
+                    <a class="h-9 w-9 border border-slate-700 rounded flex items-center justify-center hover:bg-primary hover:border-primary transition-colors" href="#">
+                        <span class="material-symbols-outlined text-sm">mail</span>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase tracking-widest text-xs">Quick Links</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="products.html" class="hover:text-white transition-colors">Products</a></li>
+                    <li><a href="portfolio.html" class="hover:text-white transition-colors">Portfolio</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase tracking-widest text-xs">Services</h4>
+                <ul class="space-y-3 text-sm">
+                    <li>Mechanical Engineering</li>
+                    <li>Structural Fabrication</li>
+                    <li>Industrial Construction</li>
+                    <li>Project Management</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase tracking-widest text-xs">Contact</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-primary text-sm mt-0.5">location_on</span>
+                        <span>No. 2 Pallack Street, Nkana West, Kitwe, Zambia</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-sm">call</span>
+                        <span>+26(0) 977280479</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-sm">mail</span>
+                        <span>info.geolzef@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-xs text-slate-500">© 2025 Geolzef Engineering Limited. All rights reserved.</p>
+            <div class="flex gap-6 text-xs text-slate-500 font-bold uppercase tracking-widest">
+                <a class="hover:text-white transition-colors" href="#">ISO 9001 Certified</a>
+                <a class="hover:text-white transition-colors" href="#">Safety Standards</a>
+                <a class="hover:text-white transition-colors" href="#">Regional Compliance</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const openBtn = document.getElementById('open-menu');
+    const closeBtn = document.getElementById('close-menu');
+    const body = document.body;
+
+    openBtn.addEventListener('click', () => {
+        body.classList.add('menu-open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        body.classList.remove('menu-open');
+    });
+
+    //
