@@ -1,9 +1,13 @@
-// Initialize Supabase
-const supabaseUrl = 'https://vmbswwyglyleazfngger.supabase.co';
-const supabaseKey = 'sb_publishable_0obXWjSNjKrH_PWDt3_U0w_O2oH96Ki';
-const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
-
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Supabase inside the listener to ensure the library is loaded
+    const supabaseUrl = 'https://vmbswwyglyleazfngger.supabase.co';
+    const supabaseKey = 'sb_publishable_0obXWjSNjKrH_PWDt3_U0w_O2oH96Ki';
+    
+    let _supabase = null;
+    if (typeof supabase !== 'undefined') {
+        _supabase = supabase.createClient(supabaseUrl, supabaseKey);
+    }
+
     let allProducts = [];
     const productGrid = document.getElementById('product-grid');
     const categoryTotalsDisplay = {
@@ -18,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch products from Supabase
     async function loadProducts() {
         try {
+            if (!_supabase) throw new Error('Supabase library not loaded');
+
             const { data, error } = await _supabase
                 .from('products')
                 .select('*');
@@ -28,14 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
             renderProducts(allProducts);
             updateCategoryCounts();
         } catch (error) {
-            console.error('Error loading from Supabase:', error);
+            console.warn('Supabase Error, falling back to local data:', error);
             // Fallback to local JSON
             try {
                 const response = await fetch('products.json');
+                if (!response.ok) throw new Error('Local JSON not found');
                 allProducts = await response.json();
                 renderProducts(allProducts);
                 updateCategoryCounts();
             } catch (jsonError) {
+                console.error('Final fallback failed:', jsonError);
                 productGrid.innerHTML = '<p class="col-span-full text-center py-10 font-bold text-primary">Failed to load products. Please check your connection.</p>';
             }
         }
@@ -100,6 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Search and Sort
     const searchInput = document.getElementById('product-search');
     const sortSelect = document.getElementById('sort-products');
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const activeClasses = ['bg-primary', 'text-white'];
+    const inactiveClasses = ['text-slate-600', 'dark:text-slate-400', 'hover:bg-slate-100', 'dark:hover:bg-slate-800'];
 
     function applyFilters() {
         const activeCategory = document.querySelector('.category-btn.bg-primary').dataset.category;
