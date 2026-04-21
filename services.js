@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Supabase
     const supabaseUrl = 'https://vmbswwyglyleazfngger.supabase.co';
     const supabaseKey = 'sb_publishable_0obXWjSNjKrH_PWDt3_U0w_O2oH96Ki';
     
@@ -12,7 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryBtns = document.querySelectorAll('.service-category-btn');
     let allServices = [];
 
+    // Fallback data from Company Profile
+    const fallbackServices = [
+        { title: 'Electrical Engineering', description: 'Professional design and implementation of power distribution and industrial automation.', category: 'Industrial', icon: 'electric_bolt' },
+        { title: 'Mechanical Engineering', description: 'Expert HVAC system design, heavy structural steelwork, and specialized pumping solutions.', category: 'Industrial', icon: 'settings_suggest' },
+        { title: 'Civil Engineering & Construction', description: 'Critical infrastructure development and reinforced concrete works.', category: 'Infrastructure', icon: 'architecture' },
+        { title: 'Maintenance & Technical Support', description: '24/7 preventive and corrective maintenance programs designed to minimize downtime.', category: 'Industrial', icon: 'engineering' },
+        { title: 'Geotechnical Services', description: 'Soil investigation, foundation engineering, and geological analysis.', category: 'Industrial', icon: 'landscape' },
+        { title: 'Workspace Solutions', description: 'Office planning, interior design, furniture supply, and aluminium works.', category: 'Infrastructure', icon: 'domain' }
+    ];
+
     async function loadServices() {
+        console.log('Loading Services...');
         try {
             if (!_supabase) throw new Error('Supabase not loaded');
 
@@ -23,23 +33,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (error) throw error;
             
-            allServices = data;
+            if (!data || data.length === 0) {
+                console.warn('Supabase Services empty, using fallback');
+                allServices = fallbackServices;
+            } else {
+                allServices = data;
+            }
             renderServices(allServices);
         } catch (error) {
-            console.error('Error loading services:', error);
-            servicesGrid.innerHTML = `
-                <div class="col-span-full text-center py-20">
-                    <p class="text-primary font-bold">Failed to load services. Please check your database connection.</p>
-                </div>
-            `;
+            console.warn('Services loading issue:', error);
+            allServices = fallbackServices;
+            renderServices(allServices);
         }
     }
 
     function renderServices(services) {
+        if (!servicesGrid) return;
         servicesGrid.innerHTML = '';
 
         if (services.length === 0) {
-            servicesGrid.innerHTML = '<p class="col-span-full text-center py-20 text-slate-500">No services found in this category.</p>';
+            servicesGrid.innerHTML = '<p class="col-span-full text-center py-20 text-slate-500">No services found.</p>';
             return;
         }
 
@@ -73,8 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
     categoryBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const category = btn.dataset.category;
-            
-            // Update UI
             categoryBtns.forEach(b => {
                 const isActive = b.dataset.category === category;
                 if (isActive) {
@@ -85,12 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     b.classList.add('hover:bg-slate-100', 'dark:hover:bg-slate-800');
                 }
             });
-
-            // Filter
-            const filtered = category === 'all' 
-                ? allServices 
-                : allServices.filter(s => s.category === category);
-            
+            const filtered = category === 'all' ? allServices : allServices.filter(s => s.category === category);
             renderServices(filtered);
         });
     });
