@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Heavy-Duty Slurry Pumps",
+    "category": "Mining Equipment",
+    "description": "Wear-resistant pumps for abrasive high-density slurry in mining and mineral processing. Low maintenance, high efficiency.",
+    "sku": "GZ-SP01-HD",
+    "image": "images/Slurry.jpeg",
+    "newArrival": true
+  },
+  {
+    "id": 2,
+    "name": "Circular Vibrating Screen",
+    "category": "Mining Equipment",
+    "description": "Multi-layer circular motion screening for aggregate, ore and coal. High throughput with robust welded frame construction.",
+    "sku": "GZ-VS01-CR",
+    "image": "images/circularvibratescreen.jpeg",
+    "newArrival": false
+  },
+  {
+    "id": 3,
+    "name": "Caustic Soda",
+    "category": "Chemicals",
+    "description": "A strong alkaline chemical widely used in water treatment, soap and detergent production, and industrial cleaning. It is effective for pH control, grease removal, and various manufacturing processes. Available in flakes, pearls, or liquid form.",
+    "sku": "GZ-VS01-CR",
+    "image": "images/caustic_soda.png",
+    "newArrival": false
+  },
+  {
+    "id": 4,
+    "name": "Floccullant",
+    "category": "Chemicals",
+    "description": "A water treatment chemical used to bind fine particles together into larger clumps (flocs) for easy removal. It improves solid-liquid separation and is widely used in mining, wastewater treatment, and industrial processing. Available in liquid or powder form.",
+    "sku": "GZ-VS02-LN",
+    "image": "images/flocculant.png",
+    "newArrival": false
+  },
+  {
+    "id": 5,
+    "name": "Hydrogen Peroxide",
+    "category": "Chemicals",
+    "description": "A strong oxidizing agent used for disinfection, bleaching, and water treatment. It breaks down into water and oxygen, making it an environmentally friendly solution.",
+    "sku": "GZ-VS02-LN",
+    "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
+    "newArrival": false
+  },
+  {
+    "id": 6,
+    "name": "Lime",
+    "category": "Chemicals",
+    "description": "A highly effective alkaline reagent used for pH control, water treatment, and mineral processing. It helps neutralize acids, remove impurities, and improve solid-liquid separation in industrial applications.",
+    "sku": "GZ-VS02-LN",
+    "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
+    "newArrival": false
+  }
+]
