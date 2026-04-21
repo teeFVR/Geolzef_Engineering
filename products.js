@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fetch products from Supabase
     async function loadProducts() {
+        console.log('Attempting to load products from Supabase...');
         try {
             if (!_supabase) throw new Error('Supabase library not loaded');
 
@@ -30,22 +31,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (error) throw error;
             
+            // If the table exists but is empty, fallback to local JSON for now
+            if (!data || data.length === 0) {
+                console.warn('Supabase table is empty, falling back to local JSON...');
+                await loadLocalJSON();
+                return;
+            }
+
+            console.log('Successfully loaded ' + data.length + ' products from Supabase');
             allProducts = data;
             renderProducts(allProducts);
             updateCategoryCounts();
         } catch (error) {
-            console.warn('Supabase Error, falling back to local data:', error);
-            // Fallback to local JSON
-            try {
-                const response = await fetch('products.json');
-                if (!response.ok) throw new Error('Local JSON not found');
-                allProducts = await response.json();
-                renderProducts(allProducts);
-                updateCategoryCounts();
-            } catch (jsonError) {
-                console.error('Final fallback failed:', jsonError);
-                productGrid.innerHTML = '<p class="col-span-full text-center py-10 font-bold text-primary">Failed to load products. Please check your connection.</p>';
-            }
+            console.warn('Supabase connection issue, falling back to local data:', error);
+            await loadLocalJSON();
+        }
+    }
+
+    async function loadLocalJSON() {
+        try {
+            const response = await fetch('products.json');
+            if (!response.ok) throw new Error('Local JSON not found');
+            allProducts = await response.json();
+            console.log('Successfully loaded ' + allProducts.length + ' products from local JSON');
+            renderProducts(allProducts);
+            updateCategoryCounts();
+        } catch (jsonError) {
+            console.error('Final loading failure:', jsonError);
+            productGrid.innerHTML = '<p class="col-span-full text-center py-10 font-bold text-primary">Failed to load products. Please check your connection.</p>';
         }
     }
 
